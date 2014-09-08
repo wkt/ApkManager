@@ -13,7 +13,6 @@
 @implementation DocumentController
 
 - (void)awakeFromNib {
-    //NSLog(@"%s\n",__FUNCTION__);
     NSBundle *main = [NSBundle mainBundle];
     const char *path = getenv("PATH");
     if(path && path[0]){
@@ -23,7 +22,7 @@
         
         path = [[NSString stringWithFormat:@"%@:%s",bundleBin,path] UTF8String];
     }
-    NSLog(@"path:%s\n",path);
+    //设置命令搜索路径,方便程序调用内置的脚本和命令
     setenv("PATH", path, 1);
     [super awakeFromNib];
 }
@@ -32,37 +31,24 @@
 - (id)makeDocumentForURL:(NSURL *)absoluteDocumentURL withContentsOfURL:(NSURL *)absoluteDocumentContentsURL ofType:(NSString *)typeName error:(NSError **)outError
 {
     
-//    NSLog(@"%s:absoluteDocumentURL:%@,absoluteDocumentContentsURL:%@,typeName:%@,outError:%@\n",
-//          __FUNCTION__,
-//          absoluteDocumentURL,
-//          absoluteDocumentContentsURL,
-//          typeName,
-//          *outError
-//          );
-    
     return [super makeDocumentForURL:absoluteDocumentURL withContentsOfURL:absoluteDocumentContentsURL ofType:typeName error:outError];
 }
 
 - (id)makeDocumentWithContentsOfURL:(NSURL *)absoluteURL ofType:(NSString *)typeName error:(NSError **)outError
 {
-//    NSLog(@"%s absoluteURL:%@,typeName:%@,outError:%@\n",
-//          __FUNCTION__,
-//          absoluteURL,
-//          typeName,
-//          *outError
-//          );
+
+    Document *ret = [super makeDocumentWithContentsOfURL:absoluteURL ofType:typeName error:outError];
+
     Document *doc = (Document*) [self currentDocument];
-    if([doc fileURL] == NULL){
+    if([doc fileURL] == NULL && ret){
+        //打开了文件,留着一个空白窗口也没有什么意思
         [doc close];
-        //[doc setFileURL:absoluteURL];
-        //return doc;
     }
-    return [super makeDocumentWithContentsOfURL:absoluteURL ofType:typeName error:outError];
+    return ret;
 }
 
 - (void)openDocument:(id)sender
 {
-    NSLog(@"%s,sender:%@\n",__FUNCTION__,sender);
     [super openDocument:sender];
 }
 

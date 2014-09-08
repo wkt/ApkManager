@@ -40,7 +40,7 @@
 	}
     
 	g_free (out);
-    NSLog(@"ret:%@",ret);
+    //NSLog(@"ret:%@",ret);
     return ret;
 }
 
@@ -63,7 +63,7 @@
     _brand = brand;
     _osVersion = osVersion;
     _displayName = [NSString stringWithFormat:@"%@ %@ - Android %@",_brand,_model,_osVersion];;
-    NSLog(@"deviceId:%@,model:%@,brand:%@,osVersion:%@\n",deviceId,model,brand,osVersion);
+    //NSLog(@"deviceId:%@,model:%@,brand:%@,osVersion:%@\n",deviceId,model,brand,osVersion);
     return self;
 }
 

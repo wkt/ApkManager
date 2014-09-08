@@ -19,6 +19,7 @@
 @interface ApkFile : NSObject {
     long _fileSize;
     long _versionCode;
+    NSUInteger _testApk;
 }
 
 @property id<ApkLoadingProtocol> apkLoading;
@@ -35,6 +36,7 @@
 
 - (long) fileSize;
 - (long) versionCode;
+- (BOOL) testApk;
 
 ///non block operation
 - (void) loadApk;

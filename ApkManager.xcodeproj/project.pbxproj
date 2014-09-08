@@ -12,13 +12,13 @@
 		1B09F65719BB77A300FF0052 /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B09F65419BB777500FF0052 /* libintl.8.dylib */; };
 		1B09F65819BB77BA00FF0052 /* libglib-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */; };
 		1B09F65C19BB7F9C00FF0052 /* ApkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09F65B19BB7F9C00FF0052 /* ApkFile.m */; };
+		1B2AC65119BDD9C900A30620 /* apk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AC65019BDD9C900A30620 /* apk.icns */; };
 		1B37517519BB41680076F56C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B37517419BB41680076F56C /* Cocoa.framework */; };
 		1B37517F19BB41680076F56C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B37517D19BB41680076F56C /* InfoPlist.strings */; };
 		1B37518119BB41680076F56C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518019BB41680076F56C /* main.m */; };
 		1B37518519BB41680076F56C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518319BB41680076F56C /* Credits.rtf */; };
 		1B37518819BB41680076F56C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518719BB41680076F56C /* Document.m */; };
 		1B37518E19BB41690076F56C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518C19BB41690076F56C /* MainMenu.xib */; };
-		1B5AF57419BB56E4002B69A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AF57319BB56E4002B69A7 /* AppDelegate.m */; };
 		1B5AF57719BB5CC7002B69A7 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AF57619BB5CC7002B69A7 /* DocumentController.m */; };
 		1BCF0C4E19BC2E7700200B00 /* get_apk_info.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */; };
 		1BCF0C4F19BC2E7E00200B00 /* get_devices.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */; };
@@ -64,6 +64,7 @@
 		1B09F65419BB777500FF0052 /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libintl.8.dylib; sourceTree = "<group>"; };
 		1B09F65A19BB7F9C00FF0052 /* ApkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApkFile.h; sourceTree = "<group>"; };
 		1B09F65B19BB7F9C00FF0052 /* ApkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApkFile.m; sourceTree = "<group>"; };
+		1B2AC65019BDD9C900A30620 /* apk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = apk.icns; path = ../apk.icns; sourceTree = "<group>"; };
 		1B37517119BB41680076F56C /* ApkManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApkManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B37517419BB41680076F56C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B37517719BB41680076F56C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -77,8 +78,6 @@
 		1B37518619BB41680076F56C /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		1B37518719BB41680076F56C /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		1B37518D19BB41690076F56C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1B5AF57219BB56E4002B69A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1B5AF57319BB56E4002B69A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1B5AF57519BB5CC7002B69A7 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
 		1B5AF57619BB5CC7002B69A7 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
 		1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_apk_info.sh; sourceTree = "<group>"; };
@@ -167,8 +166,6 @@
 				1B37518619BB41680076F56C /* Document.h */,
 				1B37518719BB41680076F56C /* Document.m */,
 				1B37518C19BB41690076F56C /* MainMenu.xib */,
-				1B5AF57219BB56E4002B69A7 /* AppDelegate.h */,
-				1B5AF57319BB56E4002B69A7 /* AppDelegate.m */,
 				1B5AF57519BB5CC7002B69A7 /* DocumentController.h */,
 				1B5AF57619BB5CC7002B69A7 /* DocumentController.m */,
 				1BCF0C6119BCA2FB00200B00 /* AdbDevice.h */,
@@ -185,6 +182,7 @@
 			children = (
 				1BCF0C4819BC2D3E00200B00 /* bin */,
 				1B37517C19BB41680076F56C /* ApkManager-Info.plist */,
+				1B2AC65019BDD9C900A30620 /* apk.icns */,
 				1B37517D19BB41680076F56C /* InfoPlist.strings */,
 				1B37518019BB41680076F56C /* main.m */,
 				1B37518219BB41680076F56C /* ApkManager-Prefix.pch */,
@@ -263,6 +261,7 @@
 				1B37518519BB41680076F56C /* Credits.rtf in Resources */,
 				1B37518E19BB41690076F56C /* MainMenu.xib in Resources */,
 				1BCF0C6019BC8FF000200B00 /* DocumentWindow.xib in Resources */,
+				1B2AC65119BDD9C900A30620 /* apk.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +290,6 @@
 			files = (
 				1B37518119BB41680076F56C /* main.m in Sources */,
 				1B37518819BB41680076F56C /* Document.m in Sources */,
-				1B5AF57419BB56E4002B69A7 /* AppDelegate.m in Sources */,
 				1B5AF57719BB5CC7002B69A7 /* DocumentController.m in Sources */,
 				1B09F65C19BB7F9C00FF0052 /* ApkFile.m in Sources */,
 				1BCF0C5F19BC8FF000200B00 /* DocumentWindowController.m in Sources */,

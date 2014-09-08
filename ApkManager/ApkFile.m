@@ -16,6 +16,7 @@
 {
     self = [super init];
     _apkFilename = path;
+    _testApk = INT_MAX;
     return self;
 }
 
@@ -23,6 +24,7 @@
 {
     self = [super init];
     _apkFilename = [url path];
+    _testApk = INT_MAX;
     return self;
 }
 
@@ -51,7 +53,7 @@
                                          G_DIR_SEPARATOR_S,
                                          getuid(),
                                          g_random_int());
-    NSLog(@"tmp_keyfile:%s",tmp_keyfile);
+    //NSLog(@"tmp_keyfile:%s",tmp_keyfile);
     int st = 0;
     gchar *cmd = g_strdup_printf("'%s' '%s' '%s'",
                                  "get_apk_info.sh",
@@ -120,9 +122,27 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(_apkLoading)[_apkLoading onFinish:self];//run in UI thread
         });
-        [self print];
+        //[self print];
     });
     
+}
+
+- (BOOL) testApk
+{
+    if(_testApk == INT_MAX){
+        gchar *cmd = g_strdup_printf("aapt d  permissions '%s'",
+                                     [_apkFilename UTF8String]);
+        gint st = -1;
+        gchar *t1 = NULL;
+        gchar *t2 = NULL;
+        BOOL ret = g_spawn_command_line_sync(cmd,&t1,&t2,&st,NULL);
+        ret = ret && st == 0;
+        g_free(cmd);
+        g_free(t1);
+        g_free(t2);
+        if(ret)_testApk = 0;
+    }
+    return _testApk == 0;
 }
 
 - (void) print

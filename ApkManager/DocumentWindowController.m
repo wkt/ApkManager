@@ -85,7 +85,7 @@
     [self updateUI];
     [_installButton setEnabled:apkFile && _devicesArray && [_devicesArray count]>0?YES:NO];
     
-    NSLog(@"%s\n",__FUNCTION__);
+    //NSLog(@"%s\n",__FUNCTION__);
 }
 
 - (void)onStart:(id)apkfile
@@ -93,7 +93,7 @@
     apkFile = Nil;
     [self updateUI];
     
-    NSLog(@"%s\n",__FUNCTION__);
+    //NSLog(@"%s\n",__FUNCTION__);
     
 }
 
@@ -116,7 +116,7 @@
 {
     NSMenu *menu = [_deviceBox menu];
     [menu removeAllItems];
-    NSLog(@"_devicesArray:%@",_devicesArray);
+    //NSLog(@"_devicesArray:%@",_devicesArray);
     if(_devicesArray == Nil || [_devicesArray count] ==0){
         [_installButton setEnabled:NO];
         return;

@@ -18,7 +18,7 @@
     if (self) {
         // Add your subclass-specific initialization here.
     }
-    NSLog(@"init:%p\n",self);
+    //NSLog(@"init:%p\n",self);
     return self;
 }
 
@@ -27,7 +27,7 @@
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    NSLog(@"%s aController:%@\n",__FUNCTION__,aController);
+    //NSLog(@"%s aController:%@\n",__FUNCTION__,aController);
     [self updateUI];
 
 }
@@ -53,8 +53,9 @@
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
 //    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
 //    @throw exception;
-    NSLog(@"readFromData:%p",self);
-    return YES;
+    //NSLog(@"readFromData:%p",self);
+    //NSLog(@"%s:%p\n",__FUNCTION__,self);
+    return _apkFile && [_apkFile testApk] ?YES:NO;
 }
 
 - (void)makeWindowControllers {
@@ -73,15 +74,12 @@
 
 - (BOOL)readFromFileWrapper:(NSFileWrapper *)fileWrapper ofType:(NSString *)typeName error:(NSError **)outError
 {
-    NSLog(@"readFromFileWrapper:%p",self);
-    NSLog(@"fileURL:%@",[self fileURL]);
     return [super readFromFileWrapper:fileWrapper ofType:typeName error:outError];
 }
 
 - (void)setFileURL:(NSURL *)absoluteURL
 {
-    
-    NSLog(@"\n\n%s mDocumentWindowController:%@\n\n\n",__FUNCTION__,mDocumentWindowController);
+    //NSLog(@"%s:%p\n",__FUNCTION__,self);
     [super setFileURL:absoluteURL];
 
     [_apkFile setApkLoading:Nil];
