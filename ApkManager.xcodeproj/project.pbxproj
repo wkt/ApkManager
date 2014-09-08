@@ -7,16 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B09F65219BB76F000FF0052 /* libglib-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */; };
+		1B09F65519BB777500FF0052 /* libintl.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B09F65419BB777500FF0052 /* libintl.8.dylib */; };
+		1B09F65719BB77A300FF0052 /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B09F65419BB777500FF0052 /* libintl.8.dylib */; };
+		1B09F65819BB77BA00FF0052 /* libglib-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */; };
+		1B09F65C19BB7F9C00FF0052 /* ApkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09F65B19BB7F9C00FF0052 /* ApkFile.m */; };
 		1B37517519BB41680076F56C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B37517419BB41680076F56C /* Cocoa.framework */; };
 		1B37517F19BB41680076F56C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B37517D19BB41680076F56C /* InfoPlist.strings */; };
 		1B37518119BB41680076F56C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518019BB41680076F56C /* main.m */; };
 		1B37518519BB41680076F56C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518319BB41680076F56C /* Credits.rtf */; };
 		1B37518819BB41680076F56C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518719BB41680076F56C /* Document.m */; };
-		1B37518B19BB41680076F56C /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518919BB41680076F56C /* Document.xib */; };
 		1B37518E19BB41690076F56C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518C19BB41690076F56C /* MainMenu.xib */; };
+		1B5AF57419BB56E4002B69A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AF57319BB56E4002B69A7 /* AppDelegate.m */; };
+		1B5AF57719BB5CC7002B69A7 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AF57619BB5CC7002B69A7 /* DocumentController.m */; };
+		1BCF0C4E19BC2E7700200B00 /* get_apk_info.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */; };
+		1BCF0C4F19BC2E7E00200B00 /* get_devices.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */; };
+		1BCF0C5219BC3A7200200B00 /* aapt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5019BC3A5F00200B00 /* aapt */; };
+		1BCF0C5519BC4A0F00200B00 /* amsed in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5319BC49FE00200B00 /* amsed */; };
+		1BCF0C5819BC8CA100200B00 /* adb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5619BC8C9800200B00 /* adb */; };
+		1BCF0C5F19BC8FF000200B00 /* DocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */; };
+		1BCF0C6019BC8FF000200B00 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */; };
+		1BCF0C6319BCA2FB00200B00 /* AdbDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C6219BCA2FB00200B00 /* AdbDevice.m */; };
+		1BCF0C6619BD817200200B00 /* ApkIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C6519BD817100200B00 /* ApkIconImageView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1B09F65619BB778B00FF0052 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = libs;
+			dstSubfolderSpec = 7;
+			files = (
+				1B09F65819BB77BA00FF0052 /* libglib-2.0.0.dylib in CopyFiles */,
+				1B09F65719BB77A300FF0052 /* libintl.8.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BCF0C4D19BC2E6A00200B00 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = bin;
+			dstSubfolderSpec = 7;
+			files = (
+				1BCF0C5819BC8CA100200B00 /* adb in CopyFiles */,
+				1BCF0C5519BC4A0F00200B00 /* amsed in CopyFiles */,
+				1BCF0C5219BC3A7200200B00 /* aapt in CopyFiles */,
+				1BCF0C4F19BC2E7E00200B00 /* get_devices.sh in CopyFiles */,
+				1BCF0C4E19BC2E7700200B00 /* get_apk_info.sh in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libglib-2.0.0.dylib"; sourceTree = "<group>"; };
+		1B09F65419BB777500FF0052 /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libintl.8.dylib; sourceTree = "<group>"; };
+		1B09F65A19BB7F9C00FF0052 /* ApkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApkFile.h; sourceTree = "<group>"; };
+		1B09F65B19BB7F9C00FF0052 /* ApkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApkFile.m; sourceTree = "<group>"; };
 		1B37517119BB41680076F56C /* ApkManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApkManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B37517419BB41680076F56C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B37517719BB41680076F56C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -29,8 +76,23 @@
 		1B37518419BB41680076F56C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1B37518619BB41680076F56C /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		1B37518719BB41680076F56C /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		1B37518A19BB41680076F56C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Document.xib; sourceTree = "<group>"; };
 		1B37518D19BB41690076F56C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1B5AF57219BB56E4002B69A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1B5AF57319BB56E4002B69A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1B5AF57519BB5CC7002B69A7 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
+		1B5AF57619BB5CC7002B69A7 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
+		1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_apk_info.sh; sourceTree = "<group>"; };
+		1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_devices.sh; sourceTree = "<group>"; };
+		1BCF0C5019BC3A5F00200B00 /* aapt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = aapt; sourceTree = "<group>"; };
+		1BCF0C5319BC49FE00200B00 /* amsed */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = amsed; sourceTree = "<group>"; };
+		1BCF0C5619BC8C9800200B00 /* adb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = adb; sourceTree = "<group>"; };
+		1BCF0C5C19BC8FF000200B00 /* DocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentWindowController.h; sourceTree = "<group>"; };
+		1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentWindowController.m; sourceTree = "<group>"; };
+		1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentWindow.xib; sourceTree = "<group>"; };
+		1BCF0C6119BCA2FB00200B00 /* AdbDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdbDevice.h; sourceTree = "<group>"; };
+		1BCF0C6219BCA2FB00200B00 /* AdbDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdbDevice.m; sourceTree = "<group>"; };
+		1BCF0C6419BD817100200B00 /* ApkIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApkIconImageView.h; sourceTree = "<group>"; };
+		1BCF0C6519BD817100200B00 /* ApkIconImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApkIconImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,12 +101,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B37517519BB41680076F56C /* Cocoa.framework in Frameworks */,
+				1B09F65219BB76F000FF0052 /* libglib-2.0.0.dylib in Frameworks */,
+				1B09F65519BB777500FF0052 /* libintl.8.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B09F64F19BB76F000FF0052 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				1B09F65419BB777500FF0052 /* libintl.8.dylib */,
+				1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */,
+			);
+			name = libs;
+			path = ApkManager/libs;
+			sourceTree = "<group>";
+		};
 		1B37516819BB41680076F56C = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +139,7 @@
 		1B37517319BB41680076F56C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B09F64F19BB76F000FF0052 /* libs */,
 				1B37517419BB41680076F56C /* Cocoa.framework */,
 				1B37517619BB41680076F56C /* Other Frameworks */,
 			);
@@ -84,10 +159,22 @@
 		1B37517A19BB41680076F56C /* ApkManager */ = {
 			isa = PBXGroup;
 			children = (
+				1BCF0C5C19BC8FF000200B00 /* DocumentWindowController.h */,
+				1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */,
+				1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */,
+				1B09F65A19BB7F9C00FF0052 /* ApkFile.h */,
+				1B09F65B19BB7F9C00FF0052 /* ApkFile.m */,
 				1B37518619BB41680076F56C /* Document.h */,
 				1B37518719BB41680076F56C /* Document.m */,
-				1B37518919BB41680076F56C /* Document.xib */,
 				1B37518C19BB41690076F56C /* MainMenu.xib */,
+				1B5AF57219BB56E4002B69A7 /* AppDelegate.h */,
+				1B5AF57319BB56E4002B69A7 /* AppDelegate.m */,
+				1B5AF57519BB5CC7002B69A7 /* DocumentController.h */,
+				1B5AF57619BB5CC7002B69A7 /* DocumentController.m */,
+				1BCF0C6119BCA2FB00200B00 /* AdbDevice.h */,
+				1BCF0C6219BCA2FB00200B00 /* AdbDevice.m */,
+				1BCF0C6419BD817100200B00 /* ApkIconImageView.h */,
+				1BCF0C6519BD817100200B00 /* ApkIconImageView.m */,
 				1B37517B19BB41680076F56C /* Supporting Files */,
 			);
 			path = ApkManager;
@@ -96,6 +183,7 @@
 		1B37517B19BB41680076F56C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1BCF0C4819BC2D3E00200B00 /* bin */,
 				1B37517C19BB41680076F56C /* ApkManager-Info.plist */,
 				1B37517D19BB41680076F56C /* InfoPlist.strings */,
 				1B37518019BB41680076F56C /* main.m */,
@@ -103,6 +191,18 @@
 				1B37518319BB41680076F56C /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BCF0C4819BC2D3E00200B00 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				1BCF0C5619BC8C9800200B00 /* adb */,
+				1BCF0C5319BC49FE00200B00 /* amsed */,
+				1BCF0C5019BC3A5F00200B00 /* aapt */,
+				1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */,
+				1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */,
+			);
+			path = bin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +215,9 @@
 				1B37516D19BB41680076F56C /* Sources */,
 				1B37516E19BB41680076F56C /* Frameworks */,
 				1B37516F19BB41680076F56C /* Resources */,
+				1B09F65619BB778B00FF0052 /* CopyFiles */,
+				1BCF0C4D19BC2E6A00200B00 /* CopyFiles */,
+				1B09F65919BB77C300FF0052 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -158,12 +261,28 @@
 			files = (
 				1B37517F19BB41680076F56C /* InfoPlist.strings in Resources */,
 				1B37518519BB41680076F56C /* Credits.rtf in Resources */,
-				1B37518B19BB41680076F56C /* Document.xib in Resources */,
 				1B37518E19BB41690076F56C /* MainMenu.xib in Resources */,
+				1BCF0C6019BC8FF000200B00 /* DocumentWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B09F65919BB77C300FF0052 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nEXECFILE=${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${SHARED_SUPPORT_FOLDER_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libs\nNEWLIBPATH=\"@executable_path/../Resources/libs\"\n\n# space separated list of libraries\nTARGETS=\"libglib-2.0.0.dylib libintl.8.dylib\"\nfor TARGET in ${TARGETS} ; do\nLIBFILE=${LIBPATH}/${TARGET}\nTARGETID=`otool -DX ${LIBPATH}/$TARGET`\nNEWTARGETID=${NEWLIBPATH}/${TARGET}\ninstall_name_tool -id ${NEWTARGETID} ${LIBFILE}\ninstall_name_tool -change ${TARGETID} ${NEWTARGETID} ${EXECFILE}\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B37516D19BB41680076F56C /* Sources */ = {
@@ -172,6 +291,12 @@
 			files = (
 				1B37518119BB41680076F56C /* main.m in Sources */,
 				1B37518819BB41680076F56C /* Document.m in Sources */,
+				1B5AF57419BB56E4002B69A7 /* AppDelegate.m in Sources */,
+				1B5AF57719BB5CC7002B69A7 /* DocumentController.m in Sources */,
+				1B09F65C19BB7F9C00FF0052 /* ApkFile.m in Sources */,
+				1BCF0C5F19BC8FF000200B00 /* DocumentWindowController.m in Sources */,
+				1BCF0C6319BCA2FB00200B00 /* AdbDevice.m in Sources */,
+				1BCF0C6619BD817200200B00 /* ApkIconImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,14 +319,6 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		1B37518919BB41680076F56C /* Document.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B37518A19BB41680076F56C /* en */,
-			);
-			name = Document.xib;
-			sourceTree = "<group>";
-		};
 		1B37518C19BB41690076F56C /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +333,6 @@
 		1B37518F19BB41690076F56C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -242,6 +358,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CFLAGS[arch=*]" = (
+					"-I/Users/wkt/gtk/inst/include/glib-2.0",
+					"-I/Users/wkt/gtk/inst/lib/glib-2.0/include",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -249,7 +369,6 @@
 		1B37519019BB41690076F56C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -279,6 +398,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApkManager/ApkManager-Prefix.pch";
 				INFOPLIST_FILE = "ApkManager/ApkManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ApkManager/libs\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -291,6 +414,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ApkManager/ApkManager-Prefix.pch";
 				INFOPLIST_FILE = "ApkManager/ApkManager-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ApkManager/libs\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -315,6 +442,7 @@
 				1B37519319BB41690076F56C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

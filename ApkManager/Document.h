@@ -7,7 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ApkFile.h"
+#import "DocumentWindowController.h"
 
 @interface Document : NSDocument
+{
+   DocumentWindowController  *mDocumentWindowController;
+}
+
+@property (weak) IBOutlet NSTextField *textFilename;
+@property (readonly) ApkFile *apkFile;
 
 @end

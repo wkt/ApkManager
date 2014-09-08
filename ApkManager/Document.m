@@ -7,6 +7,8 @@
 //
 
 #import "Document.h"
+#import "ApkFile.h"
+#import "DocumentWindowController.h"
 
 @implementation Document
 
@@ -16,25 +18,23 @@
     if (self) {
         // Add your subclass-specific initialization here.
     }
+    NSLog(@"init:%p\n",self);
     return self;
 }
 
-- (NSString *)windowNibName
-{
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-    return @"Document";
-}
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
+    NSLog(@"%s aController:%@\n",__FUNCTION__,aController);
+    [self updateUI];
+
 }
 
 + (BOOL)autosavesInPlace
 {
-    return YES;
+    return NO;
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
@@ -51,9 +51,51 @@
     // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
     // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;
+//    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
+//    @throw exception;
+    NSLog(@"readFromData:%p",self);
     return YES;
+}
+
+- (void)makeWindowControllers {
+    NSArray *myControllers = [self windowControllers];
+    if(!mDocumentWindowController){
+        mDocumentWindowController = [[DocumentWindowController alloc] init];
+        [_apkFile setApkLoading:mDocumentWindowController];
+        [_apkFile loadApk];
+    }
+    // If this document displaced a transient document, it will already have been assigned a window controller. If that is not the case, create one.
+    if ([myControllers count] == 0) {
+        [self addWindowController: mDocumentWindowController];
+    }
+}
+
+
+- (BOOL)readFromFileWrapper:(NSFileWrapper *)fileWrapper ofType:(NSString *)typeName error:(NSError **)outError
+{
+    NSLog(@"readFromFileWrapper:%p",self);
+    NSLog(@"fileURL:%@",[self fileURL]);
+    return [super readFromFileWrapper:fileWrapper ofType:typeName error:outError];
+}
+
+- (void)setFileURL:(NSURL *)absoluteURL
+{
+    
+    NSLog(@"\n\n%s mDocumentWindowController:%@\n\n\n",__FUNCTION__,mDocumentWindowController);
+    [super setFileURL:absoluteURL];
+
+    [_apkFile setApkLoading:Nil];
+    _apkFile = [[ApkFile alloc] initWithURL:absoluteURL];
+    
+    if(mDocumentWindowController){
+        [_apkFile setApkLoading:mDocumentWindowController];
+        [_apkFile loadApk];
+    }
+}
+
+- (void)updateUI
+{
+    [mDocumentWindowController updateUI];
 }
 
 @end
