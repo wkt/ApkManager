@@ -1,4 +1,4 @@
-//
+ //
 //  DocumentController.m
 //  ApkManager
 //
@@ -24,6 +24,21 @@
     }
     //设置命令搜索路径,方便程序调用内置的脚本和命令
     setenv("PATH", path, 1);
+    
+    //设置locale环境变量,脚本需要它们
+    NSString *locale = [[NSLocale currentLocale] identifier];
+    NSRange re = [locale rangeOfString:@"."];
+    NSString *ll = Nil;
+    if(re.location == NSNotFound){
+        ll = [NSString stringWithFormat:@"%@.UTF-8",locale];
+    }else{
+        ll = [NSString stringWithFormat:@"%@.UTF-8",[locale substringToIndex:re.location]];
+    }
+    setenv("LANGUAGE", [ll UTF8String], 1);
+    setenv("LANG", [ll UTF8String], 1);
+    setenv("LC_ALL", [ll UTF8String], 1);
+
+    NSLog(@"Locale:%@",ll);
     [super awakeFromNib];
 }
 
