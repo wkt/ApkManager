@@ -1,0 +1,5 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleDisplayName = "安卓应用管理器";
+CFBundleName = "安卓应用管理器";
+NSHumanReadableCopyright = "版权所有 © 2014年 weiketing.com. 保留所有权利.";

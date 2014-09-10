@@ -50,7 +50,7 @@
     [_sheetOK setEnabled:NO];
     AdbDevice *ad = [_devicesArray objectAtIndex:_currentDeviceIndex];
     [_sheetWindow setTitle:@"Installing"];;
-    [_sheetLabel setStringValue:@"Installing ..."];
+    [_sheetLabel setStringValue:NSLocalizedString(@"Installing ...","")];
     [_sheetOK setEnabled:NO];
     [_sheetProgress setHidden:NO];
     [_sheetProgress startAnimation:_installButton];
@@ -100,7 +100,7 @@
 - (void)updateUI
 {
     if(apkFile == Nil){
-        [_apkDisplayName setStringValue:@"Loading ..."];
+        [_apkDisplayName setStringValue:NSLocalizedString(@"Loading ...",@"")];
         [_installButton setEnabled:NO];
     }else{
         [_apkDisplayName setStringValue:

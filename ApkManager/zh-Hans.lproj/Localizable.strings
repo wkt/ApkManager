@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ApkManager
+
+  Created by WeiKeting on 09/10/2014.
+  Copyright (c) 2014年 weiketing.com. All rights reserved.
+*/
+"Loading ..." = "加载中..";
+"Installing" = "安装中";
+"Installing ..."="正在安装...";
+"Success" = "成功";
+"Failed"= "失败";

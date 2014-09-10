@@ -21,13 +21,14 @@
 		1B37518819BB41680076F56C /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518719BB41680076F56C /* Document.m */; };
 		1B37518E19BB41690076F56C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B37518C19BB41690076F56C /* MainMenu.xib */; };
 		1B5AF57719BB5CC7002B69A7 /* DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5AF57619BB5CC7002B69A7 /* DocumentController.m */; };
+		1B8B678B19C0A8FE00348926 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B8B678D19C0A8FE00348926 /* Localizable.strings */; };
+		1B9AF34319C09D1500AAB6CA /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9AF34519C09D1500AAB6CA /* DocumentWindow.xib */; };
 		1BCF0C4E19BC2E7700200B00 /* get_apk_info.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */; };
 		1BCF0C4F19BC2E7E00200B00 /* get_devices.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */; };
 		1BCF0C5219BC3A7200200B00 /* aapt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5019BC3A5F00200B00 /* aapt */; };
 		1BCF0C5519BC4A0F00200B00 /* amsed in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5319BC49FE00200B00 /* amsed */; };
 		1BCF0C5819BC8CA100200B00 /* adb in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BCF0C5619BC8C9800200B00 /* adb */; };
 		1BCF0C5F19BC8FF000200B00 /* DocumentWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */; };
-		1BCF0C6019BC8FF000200B00 /* DocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */; };
 		1BCF0C6319BCA2FB00200B00 /* AdbDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C6219BCA2FB00200B00 /* AdbDevice.m */; };
 		1BCF0C6619BD817200200B00 /* ApkIconImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCF0C6519BD817100200B00 /* ApkIconImageView.m */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,13 @@
 		1B37518D19BB41690076F56C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1B5AF57519BB5CC7002B69A7 /* DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentController.h; sourceTree = "<group>"; };
 		1B5AF57619BB5CC7002B69A7 /* DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentController.m; sourceTree = "<group>"; };
+		1B8B677F19C09F2300348926 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/DocumentWindow.xib"; sourceTree = "<group>"; };
+		1B8B678019C09F2300348926 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		1B8B678119C09F2300348926 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1B8B678219C09F2300348926 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		1B8B678C19C0A8FE00348926 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1B8B678E19C0A90700348926 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1B9AF34419C09D1500AAB6CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DocumentWindow.xib; sourceTree = "<group>"; };
 		1BCF0C4919BC2D3E00200B00 /* get_apk_info.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_apk_info.sh; sourceTree = "<group>"; };
 		1BCF0C4A19BC2D3E00200B00 /* get_devices.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = get_devices.sh; sourceTree = "<group>"; };
 		1BCF0C5019BC3A5F00200B00 /* aapt */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = aapt; sourceTree = "<group>"; };
@@ -89,7 +97,6 @@
 		1BCF0C5619BC8C9800200B00 /* adb */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = adb; sourceTree = "<group>"; };
 		1BCF0C5C19BC8FF000200B00 /* DocumentWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentWindowController.h; sourceTree = "<group>"; };
 		1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentWindowController.m; sourceTree = "<group>"; };
-		1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DocumentWindow.xib; sourceTree = "<group>"; };
 		1BCF0C6119BCA2FB00200B00 /* AdbDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdbDevice.h; sourceTree = "<group>"; };
 		1BCF0C6219BCA2FB00200B00 /* AdbDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdbDevice.m; sourceTree = "<group>"; };
 		1BCF0C6419BD817100200B00 /* ApkIconImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApkIconImageView.h; sourceTree = "<group>"; };
@@ -162,7 +169,7 @@
 			children = (
 				1BCF0C5C19BC8FF000200B00 /* DocumentWindowController.h */,
 				1BCF0C5D19BC8FF000200B00 /* DocumentWindowController.m */,
-				1BCF0C5E19BC8FF000200B00 /* DocumentWindow.xib */,
+				1B9AF34519C09D1500AAB6CA /* DocumentWindow.xib */,
 				1B09F65A19BB7F9C00FF0052 /* ApkFile.h */,
 				1B09F65B19BB7F9C00FF0052 /* ApkFile.m */,
 				1B37518619BB41680076F56C /* Document.h */,
@@ -190,6 +197,7 @@
 				1B37518219BB41680076F56C /* ApkManager-Prefix.pch */,
 				1B37518319BB41680076F56C /* Credits.rtf */,
 				1B2AC65219BDE6AA00A30620 /* README */,
+				1B8B678D19C0A8FE00348926 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 1B37516819BB41680076F56C;
 			productRefGroup = 1B37517219BB41680076F56C /* Products */;
@@ -263,9 +272,10 @@
 				1B37517F19BB41680076F56C /* InfoPlist.strings in Resources */,
 				1B37518519BB41680076F56C /* Credits.rtf in Resources */,
 				1B37518E19BB41690076F56C /* MainMenu.xib in Resources */,
-				1BCF0C6019BC8FF000200B00 /* DocumentWindow.xib in Resources */,
+				1B9AF34319C09D1500AAB6CA /* DocumentWindow.xib in Resources */,
 				1B2AC65119BDD9C900A30620 /* apk.icns in Resources */,
 				1B2AC65319BDE6AA00A30620 /* README in Resources */,
+				1B8B678B19C0A8FE00348926 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +293,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nEXECFILE=${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${SHARED_SUPPORT_FOLDER_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libs\nNEWLIBPATH=\"@executable_path/../Resources/libs\"\n\n# space separated list of libraries\nTARGETS=\"libglib-2.0.0.dylib libintl.8.dylib\"\nfor TARGET in ${TARGETS} ; do\nLIBFILE=${LIBPATH}/${TARGET}\nTARGETID=`otool -DX ${LIBPATH}/$TARGET`\nNEWTARGETID=${NEWLIBPATH}/${TARGET}\ninstall_name_tool -id ${NEWTARGETID} ${LIBFILE}\ninstall_name_tool -change ${TARGETID} ${NEWTARGETID} ${EXECFILE}\ndone";
+			shellScript = "#!/bin/bash\nEXECFILE=${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${SHARED_SUPPORT_FOLDER_PATH}\nLIBPATH=${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libs\nNEWLIBPATH=\"@executable_path/../Resources/libs\"\n\n# space separated list of libraries\nfix_libs_path()\n{\nTARGETS=\"libglib-2.0.0.dylib libintl.8.dylib\"\nfor TARGET in ${TARGETS} ; do\n    LIBFILE=${LIBPATH}/${TARGET}\n    LIBFILE=$(dyldinfo -dylibs \"${1}\"|grep \"${TARGET}\" |head -n 1|tr '\\r\\n\\t ' '\\0')\n    TARGETID=`otool -DX ${LIBPATH}/$TARGET`\n    NEWTARGETID=${NEWLIBPATH}/${TARGET}\n    install_name_tool -id ${NEWTARGETID} ${LIBFILE}\n    install_name_tool -change ${LIBFILE} ${NEWTARGETID} \"${1}\"\ndone\n}\n\nfor f in ${EXECFILE} ${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/libs/libglib-2.0.0.dylib\ndo\n    fix_libs_path \"$f\"\n    echo fix_libs_path \"$f\" >>/tmp/jjj.log\ndone";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -309,6 +319,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B37517E19BB41680076F56C /* en */,
+				1B8B678119C09F2300348926 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B37518419BB41680076F56C /* en */,
+				1B8B678219C09F2300348926 /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -325,8 +337,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B37518D19BB41690076F56C /* en */,
+				1B8B678019C09F2300348926 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		1B8B678D19C0A8FE00348926 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B8B678C19C0A8FE00348926 /* en */,
+				1B8B678E19C0A90700348926 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1B9AF34519C09D1500AAB6CA /* DocumentWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B9AF34419C09D1500AAB6CA /* en */,
+				1B8B677F19C09F2300348926 /* zh-Hans */,
+			);
+			name = DocumentWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
