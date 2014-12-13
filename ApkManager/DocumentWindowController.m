@@ -9,12 +9,7 @@
 #import "DocumentWindowController.h"
 #include "glib.h"
 
-@interface DocumentWindowController ()
-
-@end
-
 @implementation DocumentWindowController
-
 
 - (id)init
 {
@@ -26,8 +21,9 @@
 {
     [super windowDidLoad];
     
-    [self updateDeviceArray:NO];
     [_apkIcon setApkDraggedDelegate:self];
+    [self setDevicesArray:[[NSDocumentController sharedDocumentController] devicesArray] ];
+    [self updateDeviceBox];
 }
 
 - (IBAction)onHelpClick:(id)sender {
@@ -42,7 +38,9 @@
 }
 
 - (IBAction)refreshClick:(id)sender {
-    [self updateDeviceArray:YES];
+    //[self updateDeviceArray:YES];
+    NSLog(@"%s: sender: %@ documentController:%@",__FUNCTION__,sender,_documentController);
+    [[NSDocumentController sharedDocumentController] refreshDevices:sender];
 }
 
 - (IBAction)installClick:(id)sender {
@@ -105,7 +103,7 @@
     }else{
         [_apkDisplayName setStringValue:
                 [NSString stringWithFormat:
-                 @"%@ %@",[apkFile displayName],[apkFile versionName]
+                 @"%@ %@",[apkFile displayName],[apkFile fullVersion]
                  ]
          ];
         [_apkIcon setImage:[apkFile icon]];
@@ -116,7 +114,10 @@
 {
     NSMenu *menu = [_deviceBox menu];
     [menu removeAllItems];
-    //NSLog(@"_devicesArray:%@",_devicesArray);
+
+    [_refreshButton setEnabled:YES];
+    
+    NSLog(@"_devicesArray:%@",_devicesArray);
     if(_devicesArray == Nil || [_devicesArray count] ==0){
         [_installButton setEnabled:NO];
         return;
@@ -134,6 +135,8 @@
         }
     }
     [_deviceBox selectItemAtIndex:_currentDeviceIndex];
+    [self deviceBoxChanged:_deviceBox];
+    [_installButton setEnabled:apkFile && _devicesArray && [_devicesArray count]>0?YES:NO];
 }
 
 - (void)deviceBoxChanged:(id)sender
@@ -143,31 +146,18 @@
     currentDeviceId = [[_devicesArray objectAtIndex:_currentDeviceIndex] deviceId];
 }
 
-- (void) updateDeviceArray:(BOOL)killServer
+
+-(void)setLoadingDevices
 {
     [_refreshButton setEnabled:NO];
     [_deviceBox setEnabled:NO];
     [_installButton setEnabled:NO];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //run in non UI thread
-        if(killServer){
-            [AdbDevice killServer];
-            g_usleep(1000);
-            [AdbDevice startServer];
-            g_usleep(500);
-        }
-        _devicesArray = [AdbDevice getDevices];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateDeviceBox];//run in UI thread
-            [_refreshButton setEnabled:YES];
-            [_installButton setEnabled:apkFile && _devicesArray && [_devicesArray count]>0?YES:NO];
-        });
-    });
 }
 
 - (void)onApkDragged:(NSURL*)fileURL
 {
     [[self document] setFileURL:fileURL];
 }
+
 
 @end

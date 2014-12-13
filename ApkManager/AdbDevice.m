@@ -21,6 +21,7 @@
 		g_key_file_load_from_data (key,out,-1,0,NULL);
 		gsize len = 0;
 		gchar **vv = g_key_file_get_groups(key,&len);
+        //NSLog(@"out:%s",out);
 		if(vv !=NULL ){
             int i=0;
             ret = [[NSMutableArray alloc] initWithCapacity:len];
@@ -28,11 +29,19 @@
 				gchar *serial = g_strdup(vv[i]);
 				gchar *os_version = g_key_file_get_string(key,vv[i],"ro.build.version.release",NULL);
 				gchar *model = g_key_file_get_string(key,vv[i],"ro.product.model",NULL);
+                if( model == Nil || model[0] == 0){
+                    g_free(model);
+                    model =g_key_file_get_string(key,vv[i],"ro.product.name",NULL);
+                }
 				gchar *brand = g_key_file_get_string(key,vv[i],"ro.product.brand",NULL);
 
 				AdbDevice *ad = [[AdbDevice alloc]
                                  init:@(serial) model:@(model) brand:@(brand) osVersion:@(os_version)];
                 [ret addObject:ad];
+                g_free(serial);
+                g_free(os_version);
+                g_free(model);
+                g_free(brand);
 			}
 			g_strfreev (vv);
 		}
@@ -83,7 +92,7 @@
 	                             [apkFilename UTF8String]
 	                             );
 	g_spawn_command_line_sync (cmd,&out,&err,&ret,NULL);
-	g_printerr("%s",out);
+	///g_printerr("%s",out);
 	if(ret == 0 ){
 		ret = -2;
 		gchar **vv = g_strsplit_set(out,"\r\n",-1);
@@ -102,10 +111,10 @@
 		if(g_str_has_suffix (tmp_msg,"Success")){
 			ret = 0;
 		}
-		if(outMsg)*outMsg = [NSString stringWithUTF8String:tmp_msg];
+		if(outMsg && tmp_msg)*outMsg = [NSString stringWithUTF8String:tmp_msg];
 		g_free(tmp_msg);
 	}
-	if(outMsg&&*outMsg == NULL)*outMsg = [NSString stringWithUTF8String:err];
+	if(outMsg&&*outMsg == NULL && err)*outMsg = [NSString stringWithUTF8String:err];
 	free(err);
 	g_free(out);
 	g_free(cmd);

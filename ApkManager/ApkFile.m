@@ -28,6 +28,23 @@
     return self;
 }
 
++ (NSString *) sizeToString:(long)size
+{
+    NSString * ret = NULL;
+    if(size <1024){//KB
+        ret = [NSString stringWithFormat:@("%ld Byte"),size];
+    }else if(size < 1024*1024){//MB
+        ret = [NSString stringWithFormat:@("%0.2lf KB"),size/1024.0];
+    }else if(size < 1024*1024*1024){//GB
+        ret = [NSString stringWithFormat:@("%0.2lf MB"),size/1024.0/1024];
+    }else if(size < 1024*1024*1024*1024L){
+        ret = [NSString stringWithFormat:@("%0.2lf GB"),size/1024.0/1024/1024];
+    }else{
+        ret = [NSString stringWithFormat:@("%0.2lf TB"),size/1024.0/1024/1024/1024];
+    }
+    return ret;
+}
+
 
 - (long) fileSize
 {
@@ -69,7 +86,7 @@
             
             _packageName = [NSString stringWithUTF8String:package_name];
             _versionName = [NSString stringWithUTF8String:version_name];
-            _displayName = [NSString stringWithUTF8String:app_name];
+            _displayName = [NSString stringWithFormat:@("%@"),@(app_name)];
 
             _versionCode = g_key_file_get_uint64 (keyfile,InfoGroup,"versionCode",NULL);
 
@@ -109,7 +126,7 @@
     }
     
     g_free(cmd);
-    g_unlink(tmp_keyfile);
+    unlink(tmp_keyfile);
     g_free(tmp_keyfile);
     
 }
@@ -122,9 +139,14 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if(_apkLoading)[_apkLoading onFinish:self];//run in UI thread
         });
-        //[self print];
+        [self print];
     });
     
+}
+
+- (NSString*)fullVersion
+{
+    return [NSString stringWithFormat:@("%@(%ld)"),self.versionName,self.versionCode];
 }
 
 - (BOOL) testApk

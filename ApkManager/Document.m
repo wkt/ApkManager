@@ -60,14 +60,15 @@
 
 - (void)makeWindowControllers {
     NSArray *myControllers = [self windowControllers];
-    if(!mDocumentWindowController){
-        mDocumentWindowController = [[DocumentWindowController alloc] init];
-        [_apkFile setApkLoading:mDocumentWindowController];
+    if(!_documentWindowController){
+        _documentWindowController = [[DocumentWindowController alloc] init];
+        [_apkFile setApkLoading:_documentWindowController];
         [_apkFile loadApk];
+        [self updateUI];
     }
     // If this document displaced a transient document, it will already have been assigned a window controller. If that is not the case, create one.
     if ([myControllers count] == 0) {
-        [self addWindowController: mDocumentWindowController];
+        [self addWindowController: _documentWindowController];
     }
 }
 
@@ -85,15 +86,19 @@
     [_apkFile setApkLoading:Nil];
     _apkFile = [[ApkFile alloc] initWithURL:absoluteURL];
     
-    if(mDocumentWindowController){
-        [_apkFile setApkLoading:mDocumentWindowController];
+    if(_documentWindowController){
+        [_apkFile setApkLoading:_documentWindowController];
         [_apkFile loadApk];
     }
 }
 
 - (void)updateUI
 {
-    [mDocumentWindowController updateUI];
+    [_documentWindowController updateUI];
 }
 
+-(DocumentController *)documentController
+{
+    return [[self windowControllers] objectAtIndex:0];
+}
 @end

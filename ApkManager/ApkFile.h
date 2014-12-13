@@ -37,8 +37,12 @@
 - (long) fileSize;
 - (long) versionCode;
 - (BOOL) testApk;
+- (NSString*)fullVersion;
+
 
 ///non block operation
 - (void) loadApk;
+
++ (NSString *) sizeToString:(long)size;
 
 @end

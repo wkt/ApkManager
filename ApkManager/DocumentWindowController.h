@@ -10,13 +10,17 @@
 #import "ApkFile.h"
 #import "AdbDevice.h"
 #import "ApkIconImageView.h"
+#import "DocumentController.h"
+
 
 @interface DocumentWindowController : NSWindowController <ApkLoadingProtocol,ApkDraggedProtocol>
 {
     ApkFile *apkFile;
     NSString *currentDeviceId;
-    NSArray *_devicesArray;
 }
+
+@property (weak) NSArray *devicesArray;
+@property (weak) DocumentController *documentController;
 
 @property (readonly) NSInteger currentDeviceIndex;
 
@@ -38,5 +42,7 @@
 
 - (void)updateUI;
 - (void)updateDeviceBox;
+
+-(void)setLoadingDevices;
 
 @end

@@ -6,7 +6,7 @@ info_tmp="/tmp/.info_$USER_$$"
 key_file="$2"
 
 test -n "$key_file" || exit 2
-localLang=$(echo ${LANG}|${SED} 's|\..*||g')
+localLang=$(echo ${LANG}|${SED} 's|\..*||g;s|-|_|g;')
 localLangShort=$(echo ${LANG}|${SED} 's|_.*||g')
 test -z "$localLang" &&  localLang=$(echo ${LANGUAGE}|${SED} 's|\..*||g')
 
@@ -36,3 +36,4 @@ else
 fi
 
 rm -rf ${info_tmp}
+

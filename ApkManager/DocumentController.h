@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "UsbUtils.h"
+@interface DocumentController : NSDocumentController <AMUsbMonitor>
 
-@interface DocumentController : NSDocumentController
+@property (strong)  NSArray *devicesArray;
+
+- (void)refreshDevices:(id)sender;
 
 @end
