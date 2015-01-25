@@ -1,5 +1,8 @@
 #!/bin/sh
 
+shelldir="`dirname $0`"
+export PATH="${shelldir}:$PATH"
+
 SED=amsed
 
 info_tmp="/tmp/.info_$USER_$$"
@@ -10,14 +13,11 @@ localLang=$(echo ${LANG}|${SED} 's|\..*||g;s|-|_|g;')
 localLangShort=$(echo ${LANG}|${SED} 's|_.*||g')
 test -z "$localLang" &&  localLang=$(echo ${LANGUAGE}|${SED} 's|\..*||g')
 
-shelldir="`dirname $0`"
-export PATH="${shelldir}:$PATH"
-
 if aapt dump badging $1 > ${info_tmp} ; then
 
 {
     echo [ApkInfo]
-    grep ^package: ${info_tmp} |${SED} -e "s|'||g;s|.*:[\t ]||g"|tr '[\t ]' '\n'
+    grep ^package: ${info_tmp} |${SED} -e "s|'||g;s|.*:[\t ]||g;s|[\t ]\([a-zA-Z]*=\)|\n\1|g"
     grep ^application-label: ${info_tmp} |${SED} "s|:[\t ]*'|=|g;s|'||g"
     test -n "$localLang" && grep -E "^application-label-${localLang}:|^application-label-${localLangShort}:" ${info_tmp} \
     | ${SED} "s|:[\t ]*'|=|g;s|'||g"
