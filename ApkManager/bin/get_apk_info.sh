@@ -13,7 +13,7 @@ localLang=$(echo ${LANG}|${SED} 's|\..*||g;s|-|_|g;')
 localLangShort=$(echo ${LANG}|${SED} 's|_.*||g')
 test -z "$localLang" &&  localLang=$(echo ${LANGUAGE}|${SED} 's|\..*||g')
 
-if aapt dump badging $1 > ${info_tmp} ; then
+if aapt dump badging "$1" > "${info_tmp}" ; then
 
 {
     echo [ApkInfo]
