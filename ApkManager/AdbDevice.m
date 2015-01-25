@@ -87,7 +87,7 @@
     gint ret = -1;
 	gchar *out = NULL;
 	gchar *err = NULL;
-	gchar *cmd = g_strdup_printf("adb  -s %s install -r %s",
+	gchar *cmd = g_strdup_printf("adb  -s '%s' install -r '%s'",
 	                             [_deviceId UTF8String],
 	                             [apkFilename UTF8String]
 	                             );
