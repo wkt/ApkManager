@@ -106,7 +106,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //run in non UI thread
         if(killServer){
-            ///[AdbDevice killServer];
+            [AdbDevice killServer];
             //usleep(500);
             [AdbDevice startServer];
             usleep(500);
@@ -120,7 +120,7 @@
 
 - (void)refreshDevices:(id)sender
 {
-    [self refreshDevices:sender killServer:YES];
+    [self refreshDevices:sender killServer:(self.devicesArray == NULL || [self.devicesArray count]<1)];
 }
 
 @end

@@ -39,7 +39,7 @@
 
 - (IBAction)refreshClick:(id)sender {
     //[self updateDeviceArray:YES];
-    NSLog(@"%s: sender: %@ documentController:%@",__FUNCTION__,sender,_documentController);
+    //NSLog(@"%s: sender: %@ documentController:%@",__FUNCTION__,sender,_documentController);
     [[NSDocumentController sharedDocumentController] refreshDevices:sender];
 }
 
@@ -91,7 +91,8 @@
     apkFile = Nil;
     [self updateUI];
     
-    //NSLog(@"%s\n",__FUNCTION__);
+    
+    NSLog(@"%s\n",__FUNCTION__);
     
 }
 

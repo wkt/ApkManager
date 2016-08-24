@@ -36,7 +36,7 @@
 				gchar *brand = g_key_file_get_string(key,vv[i],"ro.product.brand",NULL);
 
 				AdbDevice *ad = [[AdbDevice alloc]
-                                 init:@(serial) model:@(model) brand:@(brand) osVersion:@(os_version)];
+                                 init:@(serial?serial:"") model:@(model?model:"") brand:@(brand?brand:"") osVersion:@(os_version?os_version:"")];
                 [ret addObject:ad];
                 g_free(serial);
                 g_free(os_version);
