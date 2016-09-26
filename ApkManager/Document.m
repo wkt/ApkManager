@@ -97,8 +97,4 @@
     [_documentWindowController updateUI];
 }
 
--(DocumentController *)documentController
-{
-    return [[self windowControllers] objectAtIndex:0];
-}
 @end

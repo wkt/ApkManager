@@ -107,11 +107,20 @@
         //run in non UI thread
         if(killServer){
             [AdbDevice killServer];
-            //usleep(500);
+            usleep(500000);
             [AdbDevice startServer];
-            usleep(500);
         }
-        self.devicesArray = [AdbDevice getDevices];
+
+        NSArray *tArray=NULL;
+        int retry  = 3;
+        do{
+            usleep(500000);
+            tArray = [AdbDevice getDevices];
+            retry --;
+            if(tArray == NULL)break;
+            if([tArray count]!= [_devicesArray count])break;
+        }while(retry>0);
+        self.devicesArray = tArray;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateDevicesboxs];//run in UI thread
         });
