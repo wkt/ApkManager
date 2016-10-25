@@ -13,7 +13,6 @@
 		1B09F65819BB77BA00FF0052 /* libglib-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B09F65019BB76F000FF0052 /* libglib-2.0.0.dylib */; };
 		1B09F65C19BB7F9C00FF0052 /* ApkFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B09F65B19BB7F9C00FF0052 /* ApkFile.m */; };
 		1B2AC65119BDD9C900A30620 /* apk.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AC65019BDD9C900A30620 /* apk.icns */; };
-		1B2AC65319BDE6AA00A30620 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 1B2AC65219BDE6AA00A30620 /* README */; };
 		1B37517519BB41680076F56C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B37517419BB41680076F56C /* Cocoa.framework */; };
 		1B37517F19BB41680076F56C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B37517D19BB41680076F56C /* InfoPlist.strings */; };
 		1B37518119BB41680076F56C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37518019BB41680076F56C /* main.m */; };
@@ -69,7 +68,6 @@
 		1B09F65A19BB7F9C00FF0052 /* ApkFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApkFile.h; sourceTree = "<group>"; };
 		1B09F65B19BB7F9C00FF0052 /* ApkFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApkFile.m; sourceTree = "<group>"; };
 		1B2AC65019BDD9C900A30620 /* apk.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = apk.icns; path = ../apk.icns; sourceTree = "<group>"; };
-		1B2AC65219BDE6AA00A30620 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		1B37517119BB41680076F56C /* ApkManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApkManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B37517419BB41680076F56C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B37517719BB41680076F56C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -205,7 +203,6 @@
 				1B37518019BB41680076F56C /* main.m */,
 				1B37518219BB41680076F56C /* ApkManager-Prefix.pch */,
 				1B37518319BB41680076F56C /* Credits.rtf */,
-				1B2AC65219BDE6AA00A30620 /* README */,
 				1B8B678D19C0A8FE00348926 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -283,7 +280,6 @@
 				1B37518E19BB41690076F56C /* MainMenu.xib in Resources */,
 				1B9AF34319C09D1500AAB6CA /* DocumentWindow.xib in Resources */,
 				1B2AC65119BDD9C900A30620 /* apk.icns in Resources */,
-				1B2AC65319BDE6AA00A30620 /* README in Resources */,
 				1B8B678B19C0A8FE00348926 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
